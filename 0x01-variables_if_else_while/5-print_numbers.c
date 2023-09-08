@@ -15,7 +15,7 @@ int main(void)
 		printf("%d is a single number of base ten\n",i);
 	
 			 
-	}		i++ ;
+	}		i=i+1 ;
 
 	return (0);
 }
