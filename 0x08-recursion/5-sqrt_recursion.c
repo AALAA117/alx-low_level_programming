@@ -1,26 +1,24 @@
 #include "main.h"
 /**
- * _sqrt_recursion_helper - returns the natural square root of a number.
+ * _sqrt_recursion_handle - returns the natural square root of a number.
  * @n: number
- * @i: squared number
+ * @y: squared number
  * Return: integer
  */
-int _sqrt_recursion_helper(int n, int i)
+int _sqrt_recursion_handle(int n, int y)
 {
-	if (i * i > n)
+	if (y * y == n)
+	{
+		return (y);
+	}
+	else if (y * y > n)
 	{
 		return (-1);
 	}
 	else
 	{
-		if (i * i == n)
-		{
-			return (i);
-		}
-		else
-		{
-			return (_sqrt_recursion_helper(n, i++));
-		}
+		y = y + 1;
+		return (_sqrt_recursion_handle(n, y));
 	}
 }
 /**
@@ -36,6 +34,6 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		return (_sqrt_recursion_helper(n, 1));
+		return (_sqrt_recursion_handle(n, 1));
 	}
 }
