@@ -6,8 +6,6 @@
  */
 int factorial(int n)
 {
-	int fact = 1;
-
 	if (n == 0)
 	{
 		return (1);
@@ -20,11 +18,7 @@ int factorial(int n)
 		}
 		else
 		{
-			fact = fact * n;
-			n--;
-			factorial(n);
+			return (n * (factorial(n - 1)));
 		}
 	}
-	return (fact);
-
 }
