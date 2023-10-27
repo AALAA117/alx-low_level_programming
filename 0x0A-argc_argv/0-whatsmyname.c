@@ -7,11 +7,10 @@
  */
 int main(int __attribute__((unused)) argc, char *argv[])
 {
-	int i = 0;
 	while (*argv[0] != '\0')
 	{
 		_putchar(*argv[0]);
-		*argv[0]++;
+		*argv[0] = *(argv[0] + 1);
 	}
 	_putchar('\n');
 	return (0);
