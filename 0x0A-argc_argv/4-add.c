@@ -19,10 +19,9 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i <= argc - 1; i++)
 		{
-			char *ptr;
-			int num = strtol(argv[i], &ptr, 10);
+			int num = atoi(argv[i]);
 
-			if (*ptr != '\0')
+			if (atoi(argv[i]) == 0)
 			{
 				printf("Error\n");
 				return (1);
