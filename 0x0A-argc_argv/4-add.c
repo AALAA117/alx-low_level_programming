@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		{
 			int num = atoi(argv[i]);
 
-			if (num == 0 && argv[i][0] != '0')
+			if (num == 0 && *argv[i] != '\0')
 			{
 				printf("Error\n");
 				return (1);
