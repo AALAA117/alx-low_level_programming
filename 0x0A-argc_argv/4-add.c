@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int add = 0;
+	char *ptr;
 
 	if (argc == 1)
 	{
@@ -19,9 +20,9 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i <= argc - 1; i++)
 		{
-			int num = atoi(argv[i]);
+			int num = strtol(argv[i], &ptr, 10);
 
-			if (num == 0 && *argv[i] != '\0')
+			if (num == 0 && *ptr != '\0')
 			{
 				printf("Error\n");
 				return (1);
