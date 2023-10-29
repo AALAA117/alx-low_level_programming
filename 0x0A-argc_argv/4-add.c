@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		printf("%d", 0);
+		printf("%d\n", 0);
 	}
 	else
 	{
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		{
 			int num = strtol(argv[i], &ptr, 10);
 
-			if (num == 0 && *ptr != '\0')
+			if (*ptr != '\0')
 			{
 				printf("Error\n");
 				return (1);
