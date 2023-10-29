@@ -13,8 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		putchar('0');
-		putchar('\n');
+		printf("%d", 0);
 	}
 	else
 	{
