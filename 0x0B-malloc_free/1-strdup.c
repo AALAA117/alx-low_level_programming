@@ -14,26 +14,25 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	while (*str != '\0')
+	while (*(str + len) != '\0')
 	{
 		len++;
 	}
-	ptr = malloc(len + 1);
+	ptr = malloc(len);
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		while (*str != '\0')
+		for (i = 0; i < len && str[i] != '\0'; i++)
 		{
-			ptr[i] = str[i];
-			i++;
+			*(ptr + i) = *(str + i);
 		}
-		ptr[i] = '\0';
+		for (; i < len; i++)
+		{
+			ptr[i] = '\0';
+		}
 	}
 	return (ptr);
 }
-
-
-
