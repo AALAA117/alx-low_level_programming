@@ -2,6 +2,10 @@
 /**
  * _strdup - returns a pointer to a newly allocated space in memory.
  * @str: string need to be copied
+ * if use *str in while loop; it will print empty
+ * string as you assign str = str + 1;
+ * you changed the address and one character
+ * will removed from input string
  * Return: string.
  */
 char *_strdup(char *str)
@@ -14,10 +18,10 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	while (*str != '\0')
+	while (str[i] != '\0')
 	{
 		len++;
-		str++;
+		i++;
 	}
 	len++;
 	ptr = malloc(len);
