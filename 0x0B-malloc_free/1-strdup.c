@@ -26,14 +26,12 @@ char *_strdup(char *str)
 	}
 	else
 	{
-		for (i = 0; i < len && str[i] != '\0'; i++)
+		for (i = 0; i < len; i++)
 		{
 			*(ptr + i) = *(str + i);
 		}
-		for (; i < len; i++)
-		{
-			ptr[i] = '\0';
-		}
+		i++;
+		ptr[i] = '\0';
 	}
 	return (ptr);
 }
