@@ -9,18 +9,21 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int len = 0;
 	int len1 = 0;
 	int len2 = 0;
 	int i = 0;
 
 	s1 = (s1 == NULL) ? "" : s1;
 	s2 = (s2 == NULL) ? "" : s2;
-	while (s2[len] != '\0' || s1[len] != '\0')
+	while (s2[len2] != '\0')
 	{
-		len++;
+		len2++;
 	}
-	ptr = malloc((len) * sizeof(char));
+	while (s1[len1] != '\0')
+	{
+		len1++;
+	}
+	ptr = malloc((len1 + len2 + 1) * sizeof(char));
 	if (ptr == NULL)
 	{
 		return (NULL);
