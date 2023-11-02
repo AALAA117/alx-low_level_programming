@@ -35,12 +35,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			i++;
 		}
 		len2 = 0;
-		while (n != 0)
+		while (n--)
 		{
 			ptr[i] = s2[len2];
 			len2++;
 			i++;
-			n--;
 		}
 		ptr[i] = '\0';
 	}
