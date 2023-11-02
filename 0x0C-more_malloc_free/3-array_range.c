@@ -21,11 +21,11 @@ int *array_range(int min, int max)
 	}
 	else
 	{
-		for (i = 0; min > max; i++)
+		for (i = 0; min <= max; i++)
 		{
 			ptr[i] = min + i;
+			min++;
 		}
 	}
 	return (ptr);
 }
-
