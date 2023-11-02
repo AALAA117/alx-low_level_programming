@@ -10,7 +10,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
 
-	if (nmemb != 0 || size != 0)
+	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
@@ -21,11 +21,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 	else
 	{
-		while (nmemb != 0)
-		{
-			ptr = 0;
-			nmemb--;
-		}
+		memset(ptr, 0, sizeof(int) * size);
 	}
 	return (ptr);
 }
