@@ -44,12 +44,15 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  */
 void *_memcpy(void *dest, const void *src, unsigned int size)
 {
-	unsigned char *p = dest;
-	const unsigned char *s = src;
+	char *p = (char *)dest;
+	const char *s = (char *)src;
 
-	while (size--)
+	if (dest != NULL && src != NULL)
 	{
-		*(p++) = *(s++);
+		while (size--)
+		{
+			*(p++) = *(s++);
+		}
 	}
 	return (dest);
 }
