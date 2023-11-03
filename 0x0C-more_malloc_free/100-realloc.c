@@ -8,6 +8,7 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
+	void *new_ptr;
 
 	ptr = malloc(old_size);
 	if (ptr == NULL)
@@ -28,27 +29,27 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		}
 		else if (new_size > old_size)
 		{
-			ptr = malloc(new_size);
-			_memset(ptr, 0, old_size);
+			new_ptr = malloc(new_size);
+			_memcpy(new_ptr, ptr, old_size);
 		}
 	}
 	return (ptr);
 }
 /**
- * _memset - allocate memory
- * @c: value
- * @len: size
- * @p: pointer
- *
- * Return: Nothing.
+ * _memcpy - check the code for
+ * @dest:..
+ * @src:..
+ * @size:..
+ * Return: nothing
  */
-void *_memset(void *p, int c, unsigned int len)
+void *_memcpy(void *dest, const void *src, unsigned int size)
 {
-        unsigned char *s = p;
+	unsigned char *p = dest;
+	const unsigned char *s = src;
 
-        while (len--)
-        {
-                *s++ = (unsigned char) c;
-        }
-        return (p);
+	while (size--)
+	{
+		*(p++) = *(s++);
+	}
+	return (dest);
 }
