@@ -1,7 +1,9 @@
 #include "main.h"
 /**
- * main - check the code for
- *
+ * _realloc - reallocates a memory block
+ * @ptr :pointer
+ * @old_size:old size
+ * @new_size:..
  * Return: Always 0.
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -28,7 +30,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		else if (new_size > old_size)
 		{
 			ptr = malloc(new_size);
-			for (i = 0; i < (old_size / sizeof((void*)ptr)); i++)
+			for (i = 0; i < (old_size / sizeof((void *)ptr)); i++)
 			{
 				return (ptr);
 			}
@@ -37,7 +39,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		else
 		{
 			i = 0;
-			while (i < (old_size / sizeof((void*)ptr)))
+			while (i < (old_size / sizeof((void *)ptr)))
 			{
 				return (ptr);
 				i++;
