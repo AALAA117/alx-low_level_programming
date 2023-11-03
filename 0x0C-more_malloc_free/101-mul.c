@@ -11,15 +11,11 @@ int main(int argc, char *argv[])
 	int num;
 	int i;
 	int result;
+	int tens, ones;
 
-	if (argc > 3)
+	if (argc != 3)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(98);
 	}
 	else
@@ -29,18 +25,25 @@ int main(int argc, char *argv[])
 			num = atoi(argv[i]);
 			if (num == 0 && *argv[i] != '0')
 			{
-				_putchar('E');
-				_putchar('r');
-				_putchar('r');
-				_putchar('o');
-				_putchar('r');
-				_putchar('\n');
+				printf("Error\n");
 				exit(98);
 			}
 			else
 			{
 				result = atoi(argv[1]) * atoi(argv[2]);
-				_putchar(result + '0');
+				if (result >= 10)
+				{
+					tens = result / 10;
+					ones = result % 10;
+					_putchar(tens + '0');
+					_putchar(ones + '0');
+					_putchar('\n');
+				}
+				else
+				{
+					_putchar(result + '0');
+					_putchar('\n');
+				}
 			}
 		}
 	}
