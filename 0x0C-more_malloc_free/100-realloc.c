@@ -29,7 +29,26 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		else if (new_size > old_size)
 		{
 			ptr = malloc(new_size);
+			_memset(ptr, 0, old_size);
 		}
 	}
 	return (ptr);
+}
+/**
+ * _memset - allocate memory
+ * @c: value
+ * @len: size
+ * @p: pointer
+ *
+ * Return: Nothing.
+ */
+void *_memset(void *p, int c, unsigned int len)
+{
+        unsigned char *s = p;
+
+        while (len--)
+        {
+                *s++ = (unsigned char) c;
+        }
+        return (p);
 }
