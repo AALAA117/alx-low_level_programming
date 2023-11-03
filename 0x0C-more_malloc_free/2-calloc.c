@@ -9,23 +9,37 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
-	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
-	ptr = malloc(nmemb * sizeof(int));
+	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		for (i  = 0; i < nmemb; i++)
-		{
-			((char *)ptr)[i] = 0;
-		}
+		_memset(ptr, 0, nmemb * size);
 	}
 	return (ptr);
+}
+/**
+ * _memset - allocate memory
+ * @c: value
+ * @len: size
+ * @p: pointer
+ *
+ * Return: Nothing.
+ */
+void *_memset(void *p, int c, unsigned int len)
+{
+	unsigned char *s = p;
+
+	while (len--)
+	{
+		*s++ = (unsigned char) c;
+	}
+	return (p);
 }
