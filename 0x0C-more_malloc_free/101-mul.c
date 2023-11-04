@@ -1,17 +1,14 @@
 #include "main.h"
 /**
  * main - check the code for
- * @argc:..
- * @argv:..
- *
- * Return: Always 0.
+ * @n: number
+ * Return : nothing
  */
+void digit(int n);
 int main(int argc, char *argv[])
 {
-	int num;
-	int i;
-	int result;
-	int tens, ones;
+	int result, i;
+	char *num1, *num2;
 
 	if (argc != 3)
 	{
@@ -20,32 +17,41 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		for (i = 0; i <= argc - 1; i++)
+		num1 = argv[1];
+		num2 = argv[2];
+		i = 0;
+		while (num1[i] != '\0' || num2[i] != '\0')
 		{
-			num = atoi(argv[i]);
-			if (num == 0 && *argv[i] != '0')
+			if (!isdigit(num1[i]) || !isdigit(num2[i]))
 			{
 				printf("Error\n");
 				exit(98);
 			}
-			else
-			{
-				result = atoi(argv[1]) * atoi(argv[2]);
-				if (result >= 10)
-				{
-					tens = result / 10;
-					ones = result % 10;
-					_putchar(tens + '0');
-					_putchar(ones + '0');
-					_putchar('\n');
-				}
-				else
-				{
-					_putchar(result + '0');
-					_putchar('\n');
-				}
-			}
+			i++;
 		}
+		result = atoi(num1) * atoi(num2);
+		digit(result);
 	}
+	_putchar('\n');
 	return (0);
+}
+/**
+ * digit - get number
+ * @n: number
+ * Return: nothing
+ */
+void digit(int n)
+{
+	int r;
+
+	if (n == 0)
+	{
+		return;
+	}
+	else
+	{
+		r = n % 10;
+		digit(n / 10);
+		_putchar(r + '\0');
+	}
 }
