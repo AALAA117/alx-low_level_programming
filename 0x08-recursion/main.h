@@ -2,6 +2,7 @@
 #define MAIN_H
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 void _puts_recursion(char *s);
 int _putchar(char c);
 int _strlen_recursion(char *s);

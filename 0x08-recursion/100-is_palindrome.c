@@ -7,12 +7,8 @@
  */
 int is_palindrome(char *s)
 {
-	int len = 0;
+	int len = strlen(s) - 1;
 
-	while (s[len] != '\0')
-	{
-		len++;
-	}
 	if (len == 0 || len == 1)
 	{
 		return (1);
