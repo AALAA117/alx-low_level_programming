@@ -5,6 +5,7 @@
  * @av : arguments
  * Return: string.
  */
+char *argstostr(int ac, char **av);
 char *argstostr(int ac, char **av)
 {
 	char *ptr;
