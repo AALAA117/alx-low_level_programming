@@ -1,10 +1,11 @@
 #include "dog.h"
 /**
- * main - check the code
+ * free_dog - free dogs
+ * @d:..
  *
- * Return: Always 0.
+ * Return: nothing
  */
 void free_dog(dog_t *d)
 {
-	free (d);
+	free(d);
 }
