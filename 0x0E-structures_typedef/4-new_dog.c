@@ -12,7 +12,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	struct dog *ptr;
 	int n_len, o_len;
 
-	ptr = malloc(sizeof(struct dog));
+	ptr = malloc(1 + sizeof(struct dog));
 	if (ptr == NULL)
 	{
 		free(ptr);
