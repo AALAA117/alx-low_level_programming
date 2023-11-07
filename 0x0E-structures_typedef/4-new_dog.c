@@ -6,16 +6,17 @@
  * @owner:..
  * Return: structure pointer.
  */
+dog_t *new_dog(char *name, float age, char *owner);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *ptr;
-	struct dog *p;
-	struct dog *c;
 	int i, j;
+	size_t k;
 
 	ptr = malloc(sizeof(struct dog));
-	if (ptr == NULL || p == NULL)
+	if (ptr == NULL)
 	{
+		free(ptr);
 		return (NULL);
 	}
 	i = 0;
@@ -23,35 +24,34 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		i++;
 	}
-	j = 0;
 	while (owner[j] != '\0')
 	{
 		j++;
 	}
-	ptr = malloc(sizeof(struct dog));
 	ptr->name = malloc((i + 1) * sizeof(char));
-	ptr->name = name;
-	_memcopy(&p, &ptr, (i + 1) * sizeof(char));
-	ptr->owner = malloc((j + 1) * sizeof(char));
-	ptr->owner = owner;
-	_memcopy(&c, &ptr, (j + 1) * sizeof(char));
-	return (ptr);
-}
-/**
- * _memcopy - copy
- * @dst:..
- * @src:..
- * @n:..
- *
- * Return: nothing
- */
-void *_memcopy(void *dst, void *src, size_t n)
-{
-	k = 0;
-	while (k < n)
+	if (ptr->name == NULL)
 	{
-		dst[k] = src[k];
-		k++;
+		free(ptr->name);
+		free(ptr);
+		return (NULL);
 	}
-	return (dst);
+	for (k = 0; k < ((i + 1) * sizeof(char)); k++)
+	{
+		ptr->name[k] = name[k];
+	}
+	ptr->name[k] = '\0';
+	ptr->owner = malloc((j + 1) * sizeof(char));
+	if (ptr->owner == NULL)
+	{
+		free(ptr->owner);
+		free(ptr);
+		return (NULL);
+	}
+	for (k = 0; k < ((j + 1) * sizeof(char)); k++)
+	{
+		ptr->owner[k] = owner[k];
+	}
+	ptr->owner[k] = '\0';
+	ptr->age = age;
+	return (ptr);
 }
