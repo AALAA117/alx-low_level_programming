@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	}
 	if (operator == NULL)
 	{
-		return (-1);
+		return (1);
 	}
 	return (0);
 }
