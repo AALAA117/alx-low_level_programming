@@ -1,15 +1,24 @@
 #include "function_pointers.h"
 /**
- * main - check the code
+ * array_iterator - check the code
+ * @array:..
+ * @size:..
+ * @action:..
  *
- * Return: Always 0.
+ * Return: nothing.
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i = 0;
 
-	for (i = 0; i < size; i++)
+	if (array == NULL)
 	{
-		action(array[i]);
+		return;
 	}
+	else
+	{
+		for (i = 0; i < size; i++)
+		{
+			action(array[i]);
+		}
 }
