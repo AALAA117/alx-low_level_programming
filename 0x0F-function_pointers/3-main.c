@@ -45,5 +45,9 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			exit(99);
 	}
+	if (operator == NULL)
+	{
+		return (-1);
+	}
 	return (0);
 }
