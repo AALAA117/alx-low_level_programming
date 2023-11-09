@@ -42,15 +42,7 @@ void print_str(char *separator, va_list args);
 void print_str(char *separator, va_list args)
 {
 	char *str = va_arg(args, char*);
-
-	if (str == NULL)
-	{
-		printf("(nil)");
-	}
-	else
-	{
-		printf("%s%s", separator, str);
-	}
+	printf("%s%s", separator, ((str == NULL) ? "(nil)" : str));
 }
 /**
  * print_all - check the code
