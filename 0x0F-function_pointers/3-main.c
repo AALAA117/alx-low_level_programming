@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 			printf("%d\n", operator(num1, num2));
 			break;
 		default:
-			operator = get_op_func("");
+			operator = NULL;
 			printf("Error\n");
 			exit(99);
 	}
