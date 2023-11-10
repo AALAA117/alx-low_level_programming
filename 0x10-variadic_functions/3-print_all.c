@@ -42,6 +42,7 @@ void print_str(char *separator, va_list args);
 void print_str(char *separator, va_list args)
 {
 	char *str = va_arg(args, char*);
+
 	printf("%s%s", separator, ((str == NULL) ? "(nil)" : str));
 }
 /**
