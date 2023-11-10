@@ -41,12 +41,13 @@ int main(int argc, char *argv[])
 			operator = get_op_func("%");
 			printf("%d\n", operator(num1, num2));
 			break;
-	}
-	operator = get_op_func(argv[2]);
-	if (operator == NULL)
-	{
-		printf("Error");
-		exit(99);
+		default:
+			operator = get_op_func(argv[2]);
+			if (operator == NULL)
+			{
+				printf("Error\n");
+				exit(99);
+			}
 	}
 	return (0);
 }
