@@ -22,7 +22,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		i++;
 	}
-	rev = malloc ((sizeof(char) * len) + 1);
+	rev = malloc((sizeof(char) * len) + 1);
 	i = 0;
 	while (b[i] != '\0')
 	{
