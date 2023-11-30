@@ -21,7 +21,7 @@ int create_file(const char *filename, char *text_content)
 		exit(0);
 	}
 	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR);
-	if (fd == -1 || chmod(filename, S_IRUSR | S_IWUSR) == -1)
+	if (fd == -1)
 	{
 		return (-1);
 	}
