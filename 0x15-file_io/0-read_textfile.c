@@ -8,8 +8,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buf;
-	int n_bytes, fd2;
-	int n;
+	ssize_t n_bytes, fd2;
+	ssize_t n;
 
 	if (filename == NULL)
 	{
