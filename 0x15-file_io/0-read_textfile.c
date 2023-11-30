@@ -20,20 +20,23 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		exit(1);
 	}
-	fd2 = open(filename, O_RDONLY | O_CREAT, S_IRUSR);
+	fd2 = open(filename, O_RDONLY);
 	if (fd2 == -1)
 	{
+		free(buf);
 		return (0);
 	}
 	n_bytes = read(fd2, buf, letters);
 	if (n_bytes < 0)
 	{
+		free(buf);
 		close(fd2);
 		return (0);
 	}
 	n = write(STDOUT_FILENO, buf, letters);
 	if (n < 0)
 	{
+		free(buf);
 		return (0);
 	}
 	close(fd2);
