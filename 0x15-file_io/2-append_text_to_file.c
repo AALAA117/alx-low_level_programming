@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * append_text_to_file - appends text at the end of a file.
+ * @filename:..
+ * @text_content:..
+ * Return: integer.
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
