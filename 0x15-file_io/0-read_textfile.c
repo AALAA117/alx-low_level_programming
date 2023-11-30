@@ -33,13 +33,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd2);
 		return (0);
 	}
+	close(fd2);
 	n = write(STDOUT_FILENO, buf, letters);
 	if (n < 0)
 	{
 		free(buf);
 		return (0);
 	}
-	close(fd2);
 	free(buf);
-	return (letters);
+	return (n);
 }
