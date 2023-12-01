@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * print_listint - prints all the elements of a listint_t list.
- * @h: head
- * Return: integer
+ * free_listint - function that frees a listint_t list.
+ * @head:..
+ * Return: nothing
  */
 void free_listint(listint_t *head)
 {
