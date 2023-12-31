@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry point
+ * @c :character
  * Return: 0.
  */
 int _putchar(char c);
