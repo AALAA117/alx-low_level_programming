@@ -13,17 +13,17 @@ void jack_bauer(void)
 
 	while (hour <= 23)
 	{
+		if (hour < 10 && hour != 0)
+		{
+			last_num++;
+		}
+		if (hour >= 10)
+		{
+			first_num = hour / 10;
+			last_num = hour % 10;
+		}
 		for (min = 0; min < 60; min++)
 		{
-			if (hour < 10 && hour != 0)
-			{
-				last_num++;
-			}
-			if (hour >= 10)
-			{
-				first_num = hour / 10;
-				last_num = hour % 10;
-			}
 			if (min <= 9)
 			{
 				_putchar(first_num + '0');
