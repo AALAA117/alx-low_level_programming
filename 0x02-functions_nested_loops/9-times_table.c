@@ -29,7 +29,7 @@ void times_table(void)
 				_putchar(first_dig + '0');
 				_putchar(last_dig + '0');
 			}
-			else
+			if (mul < 10 && j != 0)
 			{
 				_putchar(',');
 				_putchar(32);
