@@ -1,16 +1,19 @@
-#include "main.h"
+#include <stdio.h>
 /**
- * main - the function _putchar
- *
- * Return: Always 0.
+ * main - entry point
+ * Return: 0.
  */
+int _putchar(char c);
 int main(void)
 {
-	char c[] = "_putchar\n";
-	int i = 0;
-
-	for (i = 0; i <= 8; i++)
-
-		_putchar(c[i]);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 	return (0);
 }
